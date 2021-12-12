@@ -4,6 +4,12 @@
 
 **Tutorial Guide**: https://www.freecodecamp.org/news/how-to-build-a-todoapp-using-react-and-supabase/
 
+**To Do**:
+- [ ] get started with React JS
+- [ ] get started with Next JS
+- [ ] get started with Supabase
+- [ ] build a TodoApp
+
 ## Overview
 
 - [Getting Started](#getting-started)
@@ -30,14 +36,18 @@
         ```
     -   Run React App: 
         ```
-        cd my-app && npm start
+        cd react-intro/my-app && npm start
         ```
     -   Try production build: 
         ```
+        cd react-intro/my-app
         npm run build
         npm install -g serve
         sudo npm install -g serve
         serve -s build
         ```
 
-3.
+3.  Run Tic-Tac-Toe App:
+    ```
+    cd react-intro/tic-tac-toe && npm start
+    ```
