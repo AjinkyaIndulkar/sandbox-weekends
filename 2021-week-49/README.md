@@ -32,15 +32,15 @@
     -   Create:
         ```
         cd react-intro
-        npx create-react-app my-app
+        npx create-react-app tic-tac-toe
         ```
     -   Run React App: 
         ```
-        cd react-intro/my-app && npm start
+        cd react-intro/tic-tac-toe && npm start
         ```
     -   Try production build: 
         ```
-        cd react-intro/my-app
+        cd react-intro/tic-tac-toe
         npm run build
         npm install -g serve
         sudo npm install -g serve
@@ -50,4 +50,24 @@
 3.  Run Tic-Tac-Toe App:
     ```
     cd react-intro/tic-tac-toe && npm start
+    ```
+
+### NextJS
+
+#### Resources:
+- 100 Seconds Intro: https://www.youtube.com/watch?v=Sklc_fQBmcs&ab_channel=Fireship
+- Documentation + Intro Tutorial: https://nextjs.org/docs/getting-started
+- Awesome: https://github.com/unicodeveloper/awesome-nextjs
+
+#### Intro Tutorial Notes:
+
+1.  Create New Next App:
+    ```
+    cd next-intro
+    npx create-next-app next-demo-app
+    ```
+
+2.  Run Next "Dev" App:
+    ```
+    cd next-intro/next-demo-app && npm run dev
     ```
