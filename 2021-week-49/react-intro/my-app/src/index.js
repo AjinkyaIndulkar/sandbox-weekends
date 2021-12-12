@@ -52,56 +52,16 @@ class Board extends React.Component {
     * Board component to render 9 Squares, keep track of game state and declare winner.
     * @extends React.Component
     */
-    constructor(props) {
-        super(props);
-        // define Board state
-        this.state = {
-            squares: Array(9).fill(null),
-            xIsNext: true,
-        };
-    }
-
-    handleClick(i) {
-        // handle onClick event from Square components
-        const squares = this.state.squares.slice();
-
-        // return if winner found or square already filled
-        if (calculateWinner(squares) || squares[i]) {
-            return;
-        }
-
-        // set Square state
-        squares[i] = this.state.xIsNext ? 'X' : 'O';
-
-        // update Board state
-        this.setState({
-            squares: squares,
-            xIsNext: !this.state.xIsNext,
-        });
-    }
 
     renderSquare(i) {
         // render Square component
-        return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />;
+        return <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
     }
 
     render() {
-        // calculate winner
-        const winner = calculateWinner(this.state.squares);
-        let status;
-        if (winner) {
-            // winner found
-            status = 'Winner: ' + winner;
-        }
-        else {
-            // keep playing
-            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-        }
-
         // render Board with 9 Square components
         return (
             <div>
-                <div className="status">{status}</div>
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
@@ -128,14 +88,70 @@ class Game extends React.Component {
     * Game component to render tic-tac-toe Board.
     * @extends React.Component
     */
+
+    constructor(props) {
+        // initialize constructor
+        super(props);
+
+        // define Game state
+        this.state = {
+            history: [{
+                squares: Array(9).fill(null)
+            }],
+            xIsNext: true,
+        };
+    }
+
+    handleClick(i) {
+        // handle onClick event from Square components
+
+        const history = this.state.history;
+        const current = history[history.length - 1];
+        const squares = current.squares.slice();
+
+        // return if winner found or square already filled
+        if (calculateWinner(squares) || squares[i]) {
+            return;
+        }
+
+        // set Square state
+        squares[i] = this.state.xIsNext ? 'X' : 'O';
+
+        // update Board state
+        this.setState({
+            history: history.concat([{
+                squares: squares,
+            }]),
+            xIsNext: !this.state.xIsNext,
+        });
+    }
+
     render() {
+        // fetch Game state history
+        const history = this.state.history;
+
+        // fetch current Game state and calculate winner
+        const current = history[history.length - 1];
+        const winner = calculateWinner(current.squares);
+
+        let status;
+        if (winner) {
+            // winner found
+            status = 'Winner: ' + winner;
+        }
+        else {
+            // keep playing
+            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+        }
+
+        // render Game component
         return (
             <div className="game">
                 <div className="game-board">
-                    <Board />
+                    <Board squares={current.squares} onClick={(i) => this.handleClick(i)} />
                 </div>
                 <div className="game-info">
-                    <div>{/* status */}</div>
+                    <div>{status}</div>
                     <ol>{/* TODO */}</ol>
                 </div>
             </div>
