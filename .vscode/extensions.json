@@ -4,6 +4,7 @@
         "shd101wyy.markdown-preview-enhanced",
         "zhuangtongfa.material-theme",
         "msjsdiag.vscode-react-native",
-        "christian-kohler.path-intellisense"
+        "christian-kohler.path-intellisense",
+        "massi.javascript-docstrings"
     ]
 }
