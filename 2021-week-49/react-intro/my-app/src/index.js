@@ -40,7 +40,7 @@ function calculateWinner(squares) {
     for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i];
         console.log(a, b, c);
-        if (squares[a] && squares[a] === squares[b] &&& squares[a] === squares[c]) {
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
             return squares[a];
         }
     }
@@ -57,7 +57,11 @@ class Board extends React.Component {
     }
 
     handleClick(i) {
+        // handle onClick event from Square components
         const squares = this.state.squares.slice();
+        if (calculateWinner(squares) || squares[i]) {
+            return;
+        }
         squares[i] = this.state.xIsNext ? 'X' : 'O';
         this.setState({
             squares: squares,
@@ -66,12 +70,24 @@ class Board extends React.Component {
     }
 
     renderSquare(i) {
+        // render Square component
         return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />;
     }
 
     render() {
-        const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+        // calculate winner
+        const winner = calculateWinner(this.state.squares);
+        let status;
+        if (winner) {
+            // winner found
+            status = 'Winner: ' + winner;
+        }
+        else {
+            // keep playing
+            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+        }
 
+        // render Board with 9 Square components
         return (
             <div>
                 <div className="status">{status}</div>
