@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import styles from '../../styles/Home.module.css'
 
 export default function Car({ car }) {
     // use router to fetch dynamic uri
@@ -7,13 +8,22 @@ export default function Car({ car }) {
     const { id } = router.query
 
     // render dynamic data
-    return (<>
-        <Head>
-            <title>{car.color} {car.id}</title>
-        </Head>
-        <h1>Hello {id}</h1>
-        <img src={car.image} />
-    </>)
+    return (
+        <div className={styles.container}>
+            <Head>
+                <title>{car.color} {car.id}</title>
+            </Head>
+
+            <main className={styles.main}>
+                <h1 className={styles.title}>
+                    {id}
+                </h1>
+
+                <img src={car.image} width="600px" />
+
+            </main>
+        </div>
+    )
 }
 
 // SSR approach
