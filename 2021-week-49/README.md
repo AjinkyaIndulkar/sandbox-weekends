@@ -1,8 +1,8 @@
-# 2021 Week 49 Project
+# 2021 Week 49
 
-Build a TodoApp using ReactJS, NextJS, and Supabase.
+**Project**: Build a TodoApp using ReactJS, NextJS, and Supabase.
 
-Tutorial Guide: https://www.freecodecamp.org/news/how-to-build-a-todoapp-using-react-and-supabase/
+**Tutorial Guide**: https://www.freecodecamp.org/news/how-to-build-a-todoapp-using-react-and-supabase/
 
 ## Overview
 
