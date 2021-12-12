@@ -3,11 +3,48 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 function Square(props) {
+    /** 
+    * Square component of main Board.
+    * @summary - notifies Board when button is clicked.
+    * @param props - properties passed by Board component.
+    * @return button element with value based on Board's current state.
+    */
+
     return (
         <button className="square" onClick={props.onClick}>
             {props.value}
         </button>
     );
+}
+
+function calculateWinner(squares) {
+    /** 
+    * function to decide winner based on Board state.
+    * @param squares - array containing Board's current state of Square components.
+    * @return {ReturnValueDataTypeHere} Brief description of the returning value here.
+    */
+
+    // define winner lines
+    const lines = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ];
+
+    // calculate winner
+    for (let i = 0; i < lines.length; i++) {
+        const [a, b, c] = lines[i];
+        console.log(a, b, c);
+        if (squares[a] && squares[a] === squares[b] &&& squares[a] === squares[c]) {
+            return squares[a];
+        }
+    }
+    return null;
 }
 
 class Board extends React.Component {
