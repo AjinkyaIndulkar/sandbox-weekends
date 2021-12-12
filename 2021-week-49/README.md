@@ -56,8 +56,9 @@
 
 #### Resources:
 - 100 Seconds Intro: https://www.youtube.com/watch?v=Sklc_fQBmcs&ab_channel=Fireship
-- Documentation + Intro Tutorial: https://nextjs.org/docs/getting-started
+- Documentation: https://nextjs.org/docs/getting-started
 - Awesome: https://github.com/unicodeveloper/awesome-nextjs
+- Intro Tutorial: https://github.com/fireship-io/nextjs-basics
 
 #### Intro Tutorial Notes:
 
@@ -71,3 +72,12 @@
     ```
     cd next-intro/next-demo-app && npm run dev
     ```
+
+3.  Test Hello Page: http://localhost:3000/hello
+
+4.  Test Cars Page: http://localhost:3000/cars
+
+5.  Test dynamic routing inside cars page: 
+    - http://localhost:3000/cars/tesla
+    - http://localhost:3000/cars/lambo
+    - http://localhost:3000/cars/ford
