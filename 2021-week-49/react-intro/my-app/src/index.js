@@ -48,8 +48,13 @@ function calculateWinner(squares) {
 }
 
 class Board extends React.Component {
+    /**
+    * Board component to render 9 Squares, keep track of game state and declare winner.
+    * @extends React.Component
+    */
     constructor(props) {
         super(props);
+        // define Board state
         this.state = {
             squares: Array(9).fill(null),
             xIsNext: true,
@@ -59,10 +64,16 @@ class Board extends React.Component {
     handleClick(i) {
         // handle onClick event from Square components
         const squares = this.state.squares.slice();
+
+        // return if winner found or square already filled
         if (calculateWinner(squares) || squares[i]) {
             return;
         }
+
+        // set Square state
         squares[i] = this.state.xIsNext ? 'X' : 'O';
+
+        // update Board state
         this.setState({
             squares: squares,
             xIsNext: !this.state.xIsNext,
@@ -111,7 +122,12 @@ class Board extends React.Component {
     }
 }
 
+
 class Game extends React.Component {
+    /**
+    * Game component to render tic-tac-toe Board.
+    * @extends React.Component
+    */
     render() {
         return (
             <div className="game">
