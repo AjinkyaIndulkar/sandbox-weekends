@@ -5,7 +5,7 @@
 **Tutorial Guide**: https://www.freecodecamp.org/news/how-to-build-a-todoapp-using-react-and-supabase/
 
 **To Do**:
-- [ ] get started with React JS
+- [x] get started with React JS
 - [ ] get started with Next JS
 - [ ] get started with Supabase
 - [ ] build a TodoApp
