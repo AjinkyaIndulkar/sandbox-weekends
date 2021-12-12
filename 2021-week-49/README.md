@@ -20,10 +20,24 @@ Tutorial Guide: https://www.freecodecamp.org/news/how-to-build-a-todoapp-using-r
 
 #### Intro Tutorial Notes:
 
-1.  Install Node.js: https://nodejs.org/en/
-    - Check if Node is installed: `node -v` and `npm -v`
-2.  Create New React App: https://reactjs.org/docs/create-a-new-react-app.html#create-react-app
-    ```
-    cd react-intro
-    npx create-react-app my-app
-    ```
+1.  Install Node.js: https://nodejs.org/en/. Check if Node.js is installed: `node -v` and `npm -v`.
+
+2.  Create New React App: https://reactjs.org/docs/create-a-new-react-app.html#create-react-app.
+    -   Create:
+        ```
+        cd react-intro
+        npx create-react-app my-app
+        ```
+    -   Run React App: 
+        ```
+        cd my-app && npm start
+        ```
+    -   Try production build: 
+        ```
+        npm run build
+        npm install -g serve
+        sudo npm install -g serve
+        serve -s build
+        ```
+
+3.
