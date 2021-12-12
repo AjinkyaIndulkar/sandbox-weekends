@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "christian-kohler.npm-intellisense",
+        "shd101wyy.markdown-preview-enhanced",
+        "zhuangtongfa.material-theme",
+        "msjsdiag.vscode-react-native",
+        "christian-kohler.path-intellisense"
+    ]
+}
