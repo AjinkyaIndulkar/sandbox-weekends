@@ -6,7 +6,7 @@
 
 **To Do**:
 - [x] get started with React JS
-- [ ] get started with Next JS
+- [x] get started with Next JS
 - [ ] get started with Supabase
 - [ ] build a TodoApp
 
