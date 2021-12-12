@@ -39,7 +39,6 @@ function calculateWinner(squares) {
     // calculate winner
     for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i];
-        console.log(a, b, c);
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
             return squares[a];
         }
@@ -134,6 +133,19 @@ class Game extends React.Component {
         const current = history[history.length - 1];
         const winner = calculateWinner(current.squares);
 
+        // map Game history to buttons
+        const moves = history.map((step, move) => {
+            // add button description
+            const desc = move ? 'Go to move #' + move : 'Go to game start';
+
+            // render button
+            return (
+                <li key={move}>
+                    <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                </li>
+            );
+        });
+
         let status;
         if (winner) {
             // winner found
@@ -152,7 +164,7 @@ class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
-                    <ol>{/* TODO */}</ol>
+                    <ol>{moves}</ol>
                 </div>
             </div>
         );
