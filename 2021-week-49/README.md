@@ -9,10 +9,6 @@
 - [x] get started with Next JS
 - [ ] build a TodoApp
 
-## Overview
-
-- [Getting Started](#getting-started)
-
 ## Getting Started
 
 ### ReactJS

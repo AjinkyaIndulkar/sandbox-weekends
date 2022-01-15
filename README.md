@@ -1,6 +1,6 @@
 # sandbox-weekends
 
-My collection of weekend sandbox projects.
+A collection of weekend sandbox projects.
 
 ## Overview
 
